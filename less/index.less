@@ -1,2 +1,141 @@
-@import'./mixins';
-@import'./variables';
+@import './mixins.less';
+@import './variables.less';
+
+.navBar {
+    .custom-layout(center, center, column);
+    .testBox(green);
+}
+
+nav {
+    @media (@mobile) {
+        .custom-layout(center, center, column);
+    }
+    @media (@tablet) {
+        flex-direction: row;
+    }
+} 
+
+.deck {
+    .custom-layout(space-around, center, row);
+
+    @media (@mobile) {
+        flex-wrap: wrap;
+    }
+}
+
+a {
+    background-color: @primeColor2;
+    color: @primeBack;
+    border: 2px solid @accentColor;
+    border-radius: 5px;
+    text-decoration: none;
+
+    @media (@mobile) {
+        width: 450px;
+        height: 24px;
+        text-align: center;
+        padding-top: 6px;
+    }
+    @media (@tablet) {
+        width: 150px;
+    }
+}
+
+a:hover {
+    background-color: @primeBack;
+    color: @primeColor1;
+}
+
+.logo {
+    font-family: 'Work Sans', sans-serif;
+    width: 100%;
+    height: 50px;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 20px;
+    color: @primeBack;
+    background-color: @primeColor1;
+    @media (@mobile) {
+        max-width: 480px;
+    }
+    @media (@tablet) {
+        max-width: 600px;
+    }
+    @media (@desktop) {
+        max-width: 600px;
+        
+    }
+}
+
+.middle {
+    margin: auto;
+    width: 100%;
+    .testBox(orange);
+    .custom-layout(center, center, column);
+    @media (@mobile) {
+        max-width: 480px;
+    }
+    @media (@tablet) {
+        max-width: 600px;
+    }
+    @media (@desktop) {
+        max-width: 600px;
+        
+    }
+}
+
+.mid-logo {
+    font-family: 'Work Sans', sans-serif;
+    width: 100%;
+    height: 50px;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 20px;
+    color: @primeBack;
+    background-color: @primeColor1;
+    @media (@mobile) {
+        max-width: 480px;
+    }
+    @media (@tablet) {
+        max-width: 600px;
+    }
+    @media (@desktop) {
+        max-width: 600px;
+        
+    }
+}
+
+body {
+    .testBox(red);
+    .custom-layout(center, center, column);
+    margin: auto;
+    
+    width: 100%;
+    @media (@mobile) {
+        max-width: 480px;
+    }
+    @media (@tablet) {
+        max-width: 780px;
+    }
+    @media (@desktop) {
+        max-width: 980px;
+        
+    }
+}
+
+.card {
+    //height: 100px;
+    width: 29%;
+    border: 3px solid @primeColor2;
+    border-radius: 4px;
+    .custom-layout(center, center, column);
+
+    @media (@mobile) {
+        margin: 1.5%;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
