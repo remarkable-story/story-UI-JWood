@@ -23,14 +23,27 @@ class Cards {
         let buttons = document.querySelectorAll('.button');
         buttons.forEach(element => element.classList.remove('active-button'));
         this.button[0].classList.add('active-button');
-        TweenLite.to(this.button[0], 1, {padding: '0 30px'}); // To confirm click function is working, and ready to link up
-        
+        TweenLite.to(this.button[0], 1, {padding: '0 30px'});
+        // To confirm click function is working, and ready to link up
     }
 
 }
 
 
-// Curtains Operator - for @media: desktop
+
+class Country {
+    constructor(country) {
+        this.country = country;
+        this.country.addEventListener('mouseover', () => this.spinDoctor());
+    }
+
+    spinDoctor(){
+        TweenMax.to(this.country, 3, {rotationY: 360, rotationX: 720, rotationZ: 360});
+    }
+}
+
+
+// Curtains Operator - for @media: desktop--------------------------------------
 
 window.addEventListener('load', () => onload());
 window.addEventListener('resize', () => winsize());
@@ -58,8 +71,20 @@ function winsize() {
 }
 
 
-// Declarations for Constructors
+// Declarations for Constructors-------------------------------------------------
 
 let cards = document.querySelectorAll('.card');
 Array.from(cards).map(element => new Cards(element));
 //console.log(cards);
+let countries = document.querySelectorAll('h2');
+Array.from(countries).map(element => new Country(element));
+
+// Map Elements provided by Lydia Thornton---------------------------------------
+
+var divElement = document.getElementById('viz1549401526339');
+var vizElement = divElement.getElementsByTagName('object')[0];
+vizElement.style.width='100%';
+vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+var scriptElement = document.createElement('script');
+scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+vizElement.parentNode.insertBefore(scriptElement, vizElement);
