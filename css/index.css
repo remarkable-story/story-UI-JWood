@@ -1,9 +1,16 @@
+body,
+html {
+  margin: auto;
+}
 .navBar {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 3px solid green;
+  margin-top: 20px;
+}
+nav {
+  margin: 20px 0;
 }
 @media (min-width: 300px) {
   nav {
@@ -23,45 +30,61 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
+  margin-top: 15px;
 }
 @media (min-width: 300px) {
   .deck {
     flex-wrap: wrap;
   }
 }
+@media (min-width: 800px) {
+  .deck {
+    max-width: 780px;
+  }
+}
 a {
-  background-color: #696969;
+  font-family: 'PT Serif', serif;
+  background-color: #2A2D34;
   color: #eee;
-  border: 2px solid #831332;
+  border: 2px solid #30C5FF;
   border-radius: 5px;
   text-decoration: none;
 }
 @media (min-width: 300px) {
   a {
     width: 450px;
-    height: 24px;
+    height: 26px;
     text-align: center;
-    padding-top: 6px;
+    padding-top: 4px;
+    margin: 3px 0;
   }
 }
 @media (min-width: 800px) {
   a {
     width: 150px;
+    margin: 0;
   }
 }
 a:hover {
   background-color: #eee;
-  color: rgba(199, 96, 96, 0.699);
+  color: #5C946E;
+}
+.bgImg {
+  max-width: 100%;
+  border: none;
+  background-size: cover;
 }
 .logo {
   font-family: 'Work Sans', sans-serif;
   width: 100%;
   height: 50px;
+  border-radius: 6px;
   font-size: 2rem;
   text-align: center;
-  padding-top: 20px;
+  border: 2px solid #2A2D34;
+  padding-top: 15px;
   color: #eee;
-  background-color: rgba(199, 96, 96, 0.699);
+  background-color: #5C946E;
 }
 @media (min-width: 300px) {
   .logo {
@@ -81,7 +104,6 @@ a:hover {
 .middle {
   margin: auto;
   width: 100%;
-  border: 3px solid orange;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,23 +116,20 @@ a:hover {
 }
 @media (min-width: 800px) {
   .middle {
-    max-width: 600px;
-  }
-}
-@media (min-width: 1000px) {
-  .middle {
-    max-width: 600px;
+    max-width: 800px;
   }
 }
 .mid-logo {
   font-family: 'Work Sans', sans-serif;
   width: 100%;
   height: 50px;
+  border-radius: 6px;
   font-size: 2rem;
   text-align: center;
   padding-top: 20px;
   color: #eee;
-  background-color: rgba(199, 96, 96, 0.699);
+  background-color: #5C946E;
+  border: 3px dotted #80C2Af;
 }
 @media (min-width: 300px) {
   .mid-logo {
@@ -119,42 +138,36 @@ a:hover {
 }
 @media (min-width: 800px) {
   .mid-logo {
-    max-width: 600px;
-  }
-}
-@media (min-width: 1000px) {
-  .mid-logo {
-    max-width: 600px;
+    max-width: 800px;
   }
 }
 body {
-  border: 3px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: auto;
   width: 100%;
+  background-image: url("../images/bwBack.jpg");
 }
 @media (min-width: 300px) {
   body {
-    max-width: 480px;
+    max-width: 520px;
   }
 }
 @media (min-width: 800px) {
   body {
-    max-width: 780px;
+    max-width: 820px;
   }
 }
 @media (min-width: 1000px) {
   body {
-    max-width: 980px;
+    max-width: 1020px;
   }
 }
 .card {
-  width: 29%;
-  border: 3px solid #696969;
-  border-radius: 4px;
+  width: 33%;
+  border: 8px solid #2A2D34;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -165,7 +178,61 @@ body {
     margin: 1.5%;
   }
 }
-img {
+@media (min-width: 800px) {
+  .card {
+    max-width: 28%;
+  }
+}
+.card button {
+  font-family: 'PT Serif', serif;
+  font-size: 1.3rem;
+  color: #eee;
+  background: #2A2D34;
+  cursor: pointer;
+  border: 2px solid #30C5FF;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.card button:hover {
+  background: #eee;
+  color: #5C946E;
+}
+.card img {
   max-width: 100%;
   height: auto;
+}
+.active-button {
+  padding: 0 15px;
+}
+.shLeft {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 440px;
+  background: #3d3d3d;
+  opacity: 0.8;
+  margin-right: 5px;
+}
+@media (min-width: 1000px) {
+  .shLeft {
+    display: flex;
+  }
+}
+.shRight {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  min-height: 100vh;
+  width: 440px;
+  background: #3d3d3d;
+  opacity: 0.8;
+  margin-left: 5px;
+}
+@media (min-width: 1000px) {
+  .shRight {
+    display: contents;
+  }
 }

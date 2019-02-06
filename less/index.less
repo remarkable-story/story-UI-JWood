@@ -1,12 +1,22 @@
 @import './mixins.less';
 @import './variables.less';
 
+
+body, html {
+    //height: 100%;
+    margin: auto;
+}
+
+
 .navBar {
     .custom-layout(center, center, column);
-    .testBox(green);
+    margin-top: 20px;
+  
 }
 
 nav {
+    margin: 20px 0;
+
     @media (@mobile) {
         .custom-layout(center, center, column);
     }
@@ -17,14 +27,18 @@ nav {
 
 .deck {
     .custom-layout(space-around, center, row);
-
+    margin-top: 15px;
     @media (@mobile) {
         flex-wrap: wrap;
+    }
+    @media (@tablet) {
+        max-width: 780px;
     }
 }
 
 a {
-    background-color: @primeColor2;
+    font-family: 'PT Serif', serif;
+    background-color: @primeColor4;
     color: @primeBack;
     border: 2px solid @accentColor;
     border-radius: 5px;
@@ -32,12 +46,14 @@ a {
 
     @media (@mobile) {
         width: 450px;
-        height: 24px;
+        height: 26px;
         text-align: center;
-        padding-top: 6px;
+        padding-top: 4px;
+        margin: 3px 0;
     }
     @media (@tablet) {
         width: 150px;
+        margin: 0;
     }
 }
 
@@ -46,13 +62,21 @@ a:hover {
     color: @primeColor1;
 }
 
+.bgImg {
+    max-width: 100%;  
+    border: none;
+    background-size: cover;
+}
+
 .logo {
     font-family: 'Work Sans', sans-serif;
     width: 100%;
     height: 50px;
+    border-radius: 6px;
     font-size: 2rem;
     text-align: center;
-    padding-top: 20px;
+    border: 2px solid @primeColor4;
+    padding-top: 15px;
     color: @primeBack;
     background-color: @primeColor1;
     @media (@mobile) {
@@ -63,6 +87,7 @@ a:hover {
     }
     @media (@desktop) {
         max-width: 600px;
+        
         
     }
 }
@@ -70,17 +95,13 @@ a:hover {
 .middle {
     margin: auto;
     width: 100%;
-    .testBox(orange);
+    //.testBox(orange);
     .custom-layout(center, center, column);
     @media (@mobile) {
         max-width: 480px;
     }
     @media (@tablet) {
-        max-width: 600px;
-    }
-    @media (@desktop) {
-        max-width: 600px;
-        
+        max-width: 800px;
     }
 }
 
@@ -88,54 +109,120 @@ a:hover {
     font-family: 'Work Sans', sans-serif;
     width: 100%;
     height: 50px;
+    border-radius: 6px;
     font-size: 2rem;
     text-align: center;
     padding-top: 20px;
     color: @primeBack;
     background-color: @primeColor1;
+    border: 3px dotted @primeColor2;
+
     @media (@mobile) {
         max-width: 480px;
     }
     @media (@tablet) {
-        max-width: 600px;
+        max-width: 800px;
     }
-    @media (@desktop) {
-        max-width: 600px;
-        
-    }
+    
 }
 
 body {
-    .testBox(red);
-    .custom-layout(center, center, column);
-    margin: auto;
+    .custom-layout(center , center, column);
+    
     
     width: 100%;
+
+    background-image: url("../images/bwBack.jpg");
+
     @media (@mobile) {
-        max-width: 480px;
+        max-width: 520px;
     }
     @media (@tablet) {
-        max-width: 780px;
+        
+
+        max-width: 820px;
     }
     @media (@desktop) {
-        max-width: 980px;
+        max-width: 1020px;
         
     }
 }
 
+
+
 .card {
     //height: 100px;
-    width: 29%;
-    border: 3px solid @primeColor2;
-    border-radius: 4px;
+    width: 33%;
+    border: 8px solid @primeColor4;
+    border-radius: 8px;
     .custom-layout(center, center, column);
 
     @media (@mobile) {
         margin: 1.5%;
     }
+
+    @media (@tablet) {
+        max-width: 28%;
+    }
+
+    
+
+    button {
+        font-family: 'PT Serif', serif;
+        font-size: 1.3rem;
+        color: @primeBack;
+        background: @primeColor4;
+        cursor: pointer;
+        border: 2px solid @accentColor;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
 }
+    button:hover {
+        background: @primeBack;
+        color: @primeColor1;
+    }
 
 img {
     max-width: 100%;
     height: auto;
 }
+}
+
+.active-button {
+    padding: 0 15px;
+}
+
+.shLeft {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 440px;
+    background: rgb(61, 61, 61);
+    opacity: 0.80;
+    
+    margin-right: 5px;
+
+    @media (@desktop) {
+        display: flex;
+    }
+}
+
+.shRight {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-height: 100vh;
+    width: 440px;
+    background: rgb(61, 61, 61);
+    opacity: 0.80;
+    
+    margin-left: 5px;
+
+    @media (@desktop) {
+        display: contents;
+    }
+}
+
