@@ -31,10 +31,32 @@ class Cards {
 }
 
 
+window.addEventListener('load', () => onload());
+window.addEventListener('resize', () => winsize());
+let curtL = document.querySelector('.curtainL');
+let curtR = document.querySelector('.curtainR');
 
-//window.addEventListener('resize', () => this.ifFlex());
-window.
+function onload() {
+    if(window.innerWidth > 1200) {
+    TweenLite.to(curtL, 1, {left: 0}, 0.5);
+    TweenLite.to(curtR, 1, {right: 0}, 0.5);
+    }
+}
 
+function winsize() {
+
+    if (window.innerWidth < 1200) {
+        TweenLite.to(curtL, 1, {left: '-400px'});
+        TweenLite.to(curtR, 1, {right: '-400px'});
+    }
+    
+    if (window.innerWidth > 1200) {
+            
+            TweenLite.to(curtL, 1, {left: 0}, 0.5);
+            TweenLite.to(curtR, 1, {right: 0}, 0.5);
+
+    }
+}
 
 
 
