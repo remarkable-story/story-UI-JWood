@@ -1,4 +1,4 @@
-
+// Constructor to make the Cards for the Deck container (HTML)
 
 class Cards {
     constructor(cards) {
@@ -10,26 +10,27 @@ class Cards {
         this.button[0].addEventListener('click', () => this.activeButton());
         
     }
+
     msOver(){
         TweenLite.to(this.button[0], 0.5, {padding: '0 25px'});
-
     }
+
     msOut(){
         TweenLite.to(this.button[0], 0.5, {padding: '0 8px'});
-
     }
 
     activeButton(){
         let buttons = document.querySelectorAll('.button');
-        
         buttons.forEach(element => element.classList.remove('active-button'));
         this.button[0].classList.add('active-button');
-        TweenLite.to(this.button[0], 1, {padding: '0 30px'});
+        TweenLite.to(this.button[0], 1, {padding: '0 30px'}); // To confirm click function is working, and ready to link up
         
     }
 
 }
 
+
+// Curtains Operator - for @media: desktop
 
 window.addEventListener('load', () => onload());
 window.addEventListener('resize', () => winsize());
@@ -50,23 +51,14 @@ function winsize() {
         TweenLite.to(curtR, 1, {right: '-400px'});
     }
     
-    if (window.innerWidth > 1200) {
-            
-            TweenLite.to(curtL, 1, {left: 0}, 0.5);
-            TweenLite.to(curtR, 1, {right: 0}, 0.5);
-
+    if (window.innerWidth > 1200) {         
+        TweenLite.to(curtL, 1, {left: 0}, 0.5);
+        TweenLite.to(curtR, 1, {right: 0}, 0.5);
     }
 }
 
 
-
-
-
-
-
-
-
-
+// Declarations for Constructors
 
 let cards = document.querySelectorAll('.card');
 Array.from(cards).map(element => new Cards(element));

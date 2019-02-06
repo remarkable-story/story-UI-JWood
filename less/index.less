@@ -14,27 +14,33 @@ body, html {
   
 }
 
+
 nav {
     margin: 20px 0;
 
     @media (@mobile) {
         .custom-layout(center, center, column);
     }
+
     @media (@tablet) {
         flex-direction: row;
     }
 } 
 
+
 .deck {
     .custom-layout(space-around, center, row);
     margin-top: 15px;
+
     @media (@mobile) {
         flex-wrap: wrap;
     }
+
     @media (@tablet) {
         max-width: 780px;
     }
 }
+
 
 a {
     font-family: 'PT Serif', serif;
@@ -51,6 +57,7 @@ a {
         padding-top: 4px;
         margin: 3px 0;
     }
+
     @media (@tablet) {
         width: 150px;
         margin: 0;
@@ -62,11 +69,13 @@ a:hover {
     color: @primeColor1;
 }
 
+
 .bgImg {
     max-width: 100%;  
     border: none;
     background-size: cover;
 }
+
 
 .logo {
     font-family: 'Work Sans', sans-serif;
@@ -79,31 +88,36 @@ a:hover {
     padding-top: 15px;
     color: @primeBack;
     background-color: @primeColor1;
+
     @media (@mobile) {
         max-width: 480px;
     }
+
     @media (@tablet) {
         max-width: 600px;
     }
+
     @media (@desktop) {
-        max-width: 600px;
-        
-        
+        max-width: 600px;   
     }
 }
+
 
 .middle {
     margin: auto;
     width: 100%;
     //.testBox(orange);
     .custom-layout(center, center, column);
+
     @media (@mobile) {
         max-width: 480px;
     }
+
     @media (@tablet) {
         max-width: 800px;
     }
 }
+
 
 .mid-logo {
     font-family: 'Work Sans', sans-serif;
@@ -120,6 +134,7 @@ a:hover {
     @media (@mobile) {
         max-width: 480px;
     }
+
     @media (@tablet) {
         max-width: 800px;
     }
@@ -128,26 +143,21 @@ a:hover {
 
 body {
     .custom-layout(center , center, column);
-    
-    
     width: 100%;
-
     background-image: url("../images/bwBack.jpg");
 
     @media (@mobile) {
         max-width: 520px;
     }
-    @media (@tablet) {
-        
 
+    @media (@tablet) {
         max-width: 820px;
     }
+
     @media (@desktop) {
-        max-width: 1020px;
-        
+        max-width: 1020px;  
     }
 }
-
 
 
 .card {
@@ -165,8 +175,6 @@ body {
         max-width: 28%;
     }
 
-    
-
     button {
         font-family: 'PT Serif', serif;
         font-size: 1.3rem;
@@ -176,21 +184,23 @@ body {
         border: 2px solid @accentColor;
         border-bottom-right-radius: 8px;
         border-bottom-left-radius: 8px;
-}
+    }
+
     button:hover {
         background: @primeBack;
         color: @primeColor1;
     }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 .active-button {
     padding: 0 15px;
 }
+
 
 h2 {
     width: 100%;
@@ -201,6 +211,7 @@ h2 {
     color: @primeBack;
     background: @primeColor4;
 }
+
 
 p {
     width:98%;
@@ -215,6 +226,7 @@ p {
     background-size: cover;
 }
 
+
 .curtainL {
     position: fixed;
     top: 0;
@@ -224,10 +236,10 @@ p {
     background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
                   url("../images/laMap.jpg");
     background-size: contain;
-    opacity: 0.80;
-    
+    opacity: 0.80;  
     margin-right: 5px;
 }
+
 
 .curtainR {
     position: fixed;
@@ -239,9 +251,9 @@ p {
                   url("../images/Africa.jpg");
     background-size: contain;
     opacity: 0.80;
-    
     margin-left: 5px;   
 }
+
 
 .mapImg {
     object-fit: contain;
