@@ -35,3 +35,5 @@
     The curtains are designed to focus the page contents when the screen
     width is larger than the contents. All card and navigation buttons are
     responsive, and are easily reproduced components.
+
+~JW
